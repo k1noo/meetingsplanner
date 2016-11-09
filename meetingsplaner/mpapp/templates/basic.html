@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>{% block title %} {% endblock %}</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="http://fusion.ddmcdn.com/DSC/uploads/2016/01/1453928852_theme_builder.css" rel="stylesheet">
+		<link rel='stylesheet' id='theme-css' href='http://static.ddmcdn.com/app/fusion-usnets/css/fonts_discovery-e93f0335.css' type='text/css' media='all' />
+		<link rel='stylesheet' id='theme-css' href='http://static.ddmcdn.com/app/fusion-usnets/css/theme.usnets-bce7b337.css' type='text/css' media='all' />
+		<link rel="stylesheet" href="http://fusion.ddmcdn.com/DSC/uploads/2016/01/1453928852_theme_builder.css" type="text/css" media="all" />
+		<script src="http://static.ddmcdn.com/app/fusion-usnets/js/react-addons-0.13.3.min-970468b7.js"></script>
+		<!--TODO Use correct path to .css file here -->
+		<link href={% static 'style.css' %} rel="stylesheet">
+	</head>
+
+	<body>
+		 <div class="header-info-area">
+			<button type="button" class="navbar-toggle">
+				<div class="mobile-toggle">
+					<span class="icon-bar menu-icon"></span>
+					<span class="icon-bar menu-icon"></span>
+					<span class="icon-bar menu-icon"></span>
+					<span class="icon-bar menu-icon"></span>
+                    <span class="icon-bar menu-icon"></span>
+				</div>
+			</button>
+		</div>
+		<div class="header-nav-area">
+			<ul id="menu-1-global-menu" class="header-main-menu">
+				<!--TODO Use correct urls and titles here -->
+				<li {% if Active == "home" %}class="active"{% endif %}><a href="/">Домашняя страница</a></li>
+				<li {% if Active == "admin" %}class="active"{% endif %}><a href="/admin">Admin Page</a></li>
+                <li {% if Active == "meetings" %}class="active"{% endif %}><a href="/meetings">Встречи</a></li>
+				<li {% if Active == "users" %}class="active"{% endif %}><a href="/users">Пользователи</a></li>
+			</ul>
+
+		<div class="container main-content">
+			{% block content %}{% endblock %}
+		</div>
+		<!-- Bootstrap core JavaScript -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	</body>
+</html>
