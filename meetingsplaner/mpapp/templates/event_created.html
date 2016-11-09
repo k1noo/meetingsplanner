@@ -1,0 +1,24 @@
+{% extends "basic.html" %}
+{% block content %}
+
+{% if message == "empty" %}
+<p style="font-size: 16pt; color: white;">Событие успешно создано!</p>
+<table>
+    <tr>
+        <td style="font-size: 18pt; color: white">{{meeting.Name}}</td>
+    </tr>
+    <tr>
+        <td style="font-size: 18pt; color: white">{{meeting.Start}}</td>
+    </tr>
+    {% for member in members %}
+    <tr>
+        <td style="font-size: 14pt; color: white">
+            {{member}} {{member.WorkingTime}}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p style="font-size: 16pt; color: white;">Создание встречи невозможно</p>
+{% endif %}
+{% endblock %}

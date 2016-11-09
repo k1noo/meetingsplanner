@@ -1,0 +1,23 @@
+{% extends "basic.html" %}
+{% block content %}
+<p style="font-size: 24pt; font-family: Impact;">Новая встреча:</p>
+<form action='/newmeeting/' method="post">
+   {% csrf_token %}
+   <table>
+       <tr>
+           <td style="color: white; font-size: 14pt;">Название встречи:</td>
+           <td><input size="100" name="event_name"></td>
+       </tr>
+       <tr>
+            <td style="color: white; font-size: 14pt;">Время начала:</td>
+           <td><input size="100" name="start_time"></input></td>
+       </tr>
+       <tr>
+           <td style="color: white; font-size: 14pt;">Продолжительность:</td>
+           <td><input size="100" name="duration"></td>
+       </tr>
+
+   </table>
+   <p><input type="submit" value="Перейти к выбору участников" class="button"/></p>
+</form>
+{% endblock %}

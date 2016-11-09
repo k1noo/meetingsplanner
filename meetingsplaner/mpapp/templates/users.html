@@ -1,0 +1,6 @@
+{% extends "basic.html" %}
+{% block content %}
+{% for user in name_list %}
+    <a href="{% url "profile" uid=user.pk %}">{{user.ProfileUser.first_name}}</a></p>
+{% endfor %}
+{% endblock %}

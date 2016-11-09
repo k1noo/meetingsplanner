@@ -1,0 +1,6 @@
+{% extends "basic.html" %}
+{% block content %}
+{% for meeting in meetings_list %}
+    <a href="{% url "meeting" mid=meeting.id %}">{{meeting.Name}}</a></p>
+{% endfor %}
+{% endblock %}

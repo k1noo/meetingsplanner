@@ -1,0 +1,21 @@
+{% extends "basic.html" %}
+{% block content %}
+<p style="color: white; font-size: 14pt; font-family: Tahoma;">{{event.Name}}</p>
+<p style="color: white; font-size: 14pt; font-family: Tahoma;">{{event.Start}}</p>
+<p style="color: white; font-size: 18pt; font-family: Impact;">Необходимые участники:</p>
+<form action="/event_created/" method="get">
+<table>
+     {% for user in name_list %}
+    <tr>
+           <td>
+           <p><input type="CHECKBOX" name="{{user.pk}}" >{{user.ProfileUser.first_name}} {{user.ProfileUser.last_name}}</p>
+           </td>
+        <td>
+            <p>{{user.WorkingTime}} - {{user.FinishTime}}</p>
+        </td>
+    </tr>
+           {% endfor %}
+</table>
+    <p><input type="submit" value="Создать событие" class="button"/></p>
+</form>
+{% endblock %}
